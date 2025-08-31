@@ -2,168 +2,328 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Clueless Intern's Guide</title>
-    
-    <!-- External resources -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haneen Alghzaly's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/tab-icon.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Welcome Screen -->
-  <div id="welcomeScreen" class="welcome-screen">
-    <div class="welcome-content">
-      <h1>Welcome to Clueless Intern's Guide</h1>
-      <p>
-        Starting your first office job can be confusing.
-        This site is here to help you avoid common communication pitfalls, master email etiquette, 
-        and survive your internship with confidence. 
-        Ready to become the intern everyone relies on? Let's get started!
-      </p>
-      <button id="enterBtn">Enter Guide</button>
-    </div>
-  </div>
-
-  <!-- Main Application Content -->
-  <div id="appContent" style="display: none;">
-    <header>
-      <div class="header-left">Clueless Intern's Guide</div>
-      <div class="header-right">
-        <img src="images/office-logo.png" alt="Office Survival Logo" class="logo">
-      </div>
-    </header>
-
-    <div class="container">
-      <!-- Sidebar Navigation -->
-      <div class="sidebar unlocked" id="sidebar">
-        <div class="menu-title">
-          GUIDE MENU
-          <span class="lock-icon" id="lockIcon" title="Click to lock menu">🔓</span>
-        </div>
-
-        <div class="dropdown-content">
-          <!-- Email Nightmares Section -->
-          <div class="category">
-            <button onclick="toggleTopics('emailTopics')" class="categorybtn">
-              📧 Email Nightmares
-            </button>
-            <div id="emailTopics" class="topics">
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/7BpQfI981-U')" class="active">
-                ▶️ Reply-All Apocalypse
-              </a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/zKPcqAHJDqc')">
-                ▶️ BCC Etiquette Fails
-              </a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/FyzXfRQglec')">
-                ▶️ Subject Line Crimes
-              </a>
-              <a href="#" onclick="showQuiz('quiz1')">📝 Quiz 1: Email Etiquette</a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/IMXRHYC8q3A')">
-                ▶️ Emoji Crimes at Work
-              </a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/X6etJapxa5U')">
-                ▶️ Autocorrect Disasters
-              </a>
-              <a href="#" onclick="showQuiz('quiz2')">📝 Quiz 2: Email Recovery</a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/kimCs2emBi8')">
-                ▶️ Missing Attachments
-              </a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/IIRJIY9w1wM')">
-                ▶️ Passive-Aggressive Emails
-              </a>
-              <a href="#" onclick="showQuiz('quiz3')">📝 Quiz 3: Office Politics</a>
-              <a href="#" onclick="showMap('saudi')">🗺️ Global Email Hazard Map</a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home"><i class="fas fa-code"></i> Haneen Alghzaly</a>
             </div>
-          </div>
-
-          <!-- Intern Life Crisis Section -->
-          <div class="category">
-            <button onclick="toggleTopics('officeTopics')" class="categorybtn">
-              🏢 Intern Life Crisis
-            </button>
-            <div id="officeTopics" class="topics">
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/pPnAX3iZxuA')">
-                ▶️ First Day Panic
-              </a>
-              <a href="#" onclick="showVideo('https://www.youtube.com/embed/jxLEPPoCsKE')">
-                ▶️ Lost in the Meeting
-              </a>
-              <a href="#" onclick="showQuiz('quiz4')">📝 Quiz 4: Office Culture</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-          </div>
         </div>
-      </div>
+    </nav>
 
-      <!-- Main Content Area -->
-      <div class="main-content" id="mainContent">
-        <!-- Video Content -->
-        <div class="video-container" id="videoContainer">
-          <iframe id="courseVideo" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <!-- Quiz Content -->
-        <div id="quizContainer" class="quiz-container">
-          <h2 id="quizTitle">Quiz</h2>
-          <form id="quizForm">
-            <div class="quiz-question">
-              <p id="quizQuestion">Question will appear here</p>
-              <div class="options-list" id="optionsList"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Haneen Alghzaly</span></h1>
+                <p class="hero-subtitle">Full Stack Developer & Aspiring Data Analyst</p>
+                <p class="hero-description">
+                    I build dynamic web applications and transform data into meaningful insights. 
+                    Passionate about clean code, user-friendly design, and solving real-world problems 
+                    through technology and data.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="https://drive.google.com/file/d/13YXhQ8AKO1LvlxzNGNjch4fV-CM4bWRG/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fas fa-file-alt"></i> View Resume
+                    </a>
+                </div>
             </div>
-            <button class="submit-btn" type="button" onclick="submitQuiz()">
-              Submit
-            </button>
-          </form>
+            <div class="hero-image">
+                <div class="profile-image">
+                    <img src="images/profile.png" alt="Haneen Alghzaly - Professional Headshot" class="profile-photo">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Map Content -->
-        <div id="mapContainer" class="map-container">
-          <h2 id="mapTitle">Saudi Arabia Email Zones</h2>
-          <div class="map-controls">
-            <button class="filter-btn active all-btn" onclick="filterMap('all')">
-              <i class="fas fa-globe"></i> Show All
-            </button>
-            <button class="filter-btn high-btn" onclick="filterMap('high')">
-              <i class="fas fa-skull"></i> High Risk
-            </button>
-            <button class="filter-btn medium-btn" onclick="filterMap('medium')">
-              <i class="fas fa-exclamation-triangle"></i> Medium Risk
-            </button>
-            <button class="filter-btn low-btn" onclick="filterMap('low')">
-              <i class="fas fa-check-circle"></i> Low Risk
-            </button>
-          </div>
-          <div class="map-content" id="mapContent"></div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate developer and aspiring data analyst with a love for creating meaningful digital experiences. 
+                        With experience in both frontend and backend development, as well as data-driven projects, I enjoy building 
+                        applications and tools that solve real-world problems and provide actionable insights.
+                    </p>
+                    <p>
+                        When I'm not coding or analyzing data, you can find me exploring new technologies, or learning about AI and data science trends. I believe 
+                        in continuous learning, clean code, and creating user-friendly solutions that make a difference.
+                    </p>
+                    <div class="resume-section">
+                        <a href="https://drive.google.com/file/d/13YXhQ8AKO1LvlxzNGNjch4fV-CM4bWRG/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fas fa-file-alt"></i> View Resume
+                        </a>
+                    </div>
+
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <button class="continue-btn" id="continueBtn" onclick="continueToNext()">
-          Continue →
-        </button>
-      </div>
-    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-php"></i>
+                                <span>PHP</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                    <div class="skill-category">
+                        <h3>Data Science</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fas fa-file-excel"></i>
+                                <span>Excel</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Pandas</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>NumPy</span>
+                            </div>
+                           
+                            <div class="skill-item">
+                                <i class="fas fa-broom"></i>
+                                <span>Data Cleaning</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Data Visualization</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Basic Statistics</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-book"></i>
+                                <span>Jupyter Notebooks</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Completion Popup -->
-    <div id="completionPopup" class="popup-overlay" style="display: none;">
-      <div class="popup-box">
-        <h2>🎉 Congratulations!</h2>
-        <p>You've completed all the tutorial. You're now ready to start your internship.</p>
-        <button onclick="closeCompletionPopup()">Awesome!</button>
-      </div>
-    </div>
+                    <div class="skill-category">
+                        <h3>Development Tools</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-figma"></i>
+                                <span>Figma</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Quiz Feedback -->
-    <div id="quizFeedback" class="quiz-feedback">
-      <div class="feedback-content">
-        <span id="feedbackIcon">✓</span>
-        <p id="feedbackMessage">Your answer is correct!</p>
-        <button onclick="closeFeedback()">Continue</button>
-      </div>
-    </div>
-  </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Office Survival Guide - Project Screenshot.png" alt="Office Survival Guide - Project Screenshot" class="project-screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Office Survival Guide</h3>
+                        <p>The website provides practical guidance for new employees and interns to navigate their first office experience with confidence. It covers workplace communication, professional email etiquette, and tips for building effective relationships with colleagues. The goal is to help users quickly adapt, avoid common pitfalls, and become reliable and proactive team members.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://haneen-alghzaly.github.io/office-survival-guide/" target="_blank" class="btn btn-small">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="script.js"></script>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Dolf-HRMS - Project Screenshot.png" alt="Dolf-HRMS - Project Screenshot" class="project-screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Dolf-HRMS</h3>
+                        <p>This project adapts an open-source HRMS to fit the company's specific requirements. It focuses on adding localized features and customizing interfaces to improve workflows in recruitment, employee onboarding, attendance tracking, leave management, payroll, and performance evaluation. The project helps the company streamline HR processes and improve overall organizational efficiency.</p>
+                        <div class="project-tech">
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- Live Demo link removed for Dolf-HRMS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/Breast Cancer Recurrence Prediction - Project Screenshot.png" alt="Breast Cancer Recurrence Prediction - Project Screenshot" class="project-screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Breast Cancer Recurrence Prediction</h3>
+                        <p>This website is developed as a senior project. It predicts the likelihood of breast cancer recurrence, providing medical professionals with actionable insights for patient care. By analyzing various patient risk factors, the tool assists in informed decision-making for treatment plans. The system aims to improve patient outcomes and supports healthcare providers in managing follow-up care more effectively.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Flask</span>
+                            <span>Python</span>
+                            <span>SHAP</span>
+                            <span>XGBoost</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- Live Demo link removed for Breast Cancer Recurrence Prediction -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just want to say hello.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>haneen.alghzaly@gmail.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/haneen-alghzaly/" target="_blank" rel="noopener noreferrer">Haneen Alghzaly</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Haneen Alghzaly. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
